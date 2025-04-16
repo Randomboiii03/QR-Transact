@@ -47,3 +47,7 @@ def submit():
         return render_template('success.html', email=email, origin_url=origin_url)
     else:
         return render_template('404.html'), 404
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return render_template('404.html'), 500
