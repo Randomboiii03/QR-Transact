@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Submitted Successfully</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+        <!-- Success Icon -->
+        <div class="mb-8">
+            <div class="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Payment Submitted!</h1>
+        <p class="text-gray-600 mb-8">
+            Thank you for your payment. We have received your transaction details and will process it shortly.
+        </p>
+
+        <!-- Email Notice -->
+        <div class="bg-blue-50 rounded-lg p-4 mb-8">
+            <p class="text-blue-800">
+                A receipt will be sent to <span class="font-medium">{{ email }}</span> with the transaction details.
+            </p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ origin_url }}"
+               class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-base font-medium text-blue-700 bg-blue-100 hover:bg-blue-200 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Return to the Page
+            </a>
+        </div>
+    </div>
+
+    <!-- Confetti Animation -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="animate-confetti-1 absolute -top-10 left-1/4 w-4 h-4 bg-blue-500 rotate-45"></div>
+            <div class="animate-confetti-2 absolute -top-10 left-1/2 w-4 h-4 bg-green-500 rotate-45"></div>
+            <div class="animate-confetti-3 absolute -top-10 left-3/4 w-4 h-4 bg-yellow-500 rotate-45"></div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes confetti-1 {
+            0% { transform: translateY(0) rotateZ(45deg); }
+            100% { transform: translateY(100vh) rotateZ(225deg); }
+        }
+        @keyframes confetti-2 {
+            0% { transform: translateY(0) rotateZ(45deg); }
+            100% { transform: translateY(100vh) rotateZ(180deg); }
+        }
+        @keyframes confetti-3 {
+            0% { transform: translateY(0) rotateZ(45deg); }
+            100% { transform: translateY(100vh) rotateZ(315deg); }
+        }
+        .animate-confetti-1 {
+            animation: confetti-1 3s linear infinite;
+            animation-delay: 0.1s;
+        }
+        .animate-confetti-2 {
+            animation: confetti-2 3s linear infinite;
+            animation-delay: 0.5s;
+        }
+        .animate-confetti-3 {
+            animation: confetti-3 3s linear infinite;
+            animation-delay: 0.9s;
+        }
+    </style>
+</body>
+</html>

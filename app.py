@@ -33,7 +33,7 @@ def submit():
         image_stream = io.BytesIO(txn_image.read())  # Keep image in memory
 
     # Pass in-memory image stream to email function
-    send_receipt_email(
+    status = send_receipt_email(
         email=email,
         name=name,
         number=number,
@@ -43,4 +43,7 @@ def submit():
     )
 
     # Redirect back with original QR code link
-    return redirect(origin_url)
+    if status:
+        return render_template('success.html', email=email, origin_url=origin_url)
+    else:
+        return render_template('404.html'), 404
