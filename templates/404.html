@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes shadow {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+            50% { transform: translateX(-50%) scale(0.85); opacity: 0.2; }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-shadow { animation: shadow 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full text-center">
+        <div class="mb-8 relative">
+            <!-- Ghost SVG Icon -->
+            <svg class="w-24 h-24 mx-auto text-blue-500 animate-float" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 10h.01"></path>
+                <path d="M15 10h.01"></path>
+                <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"></path>
+            </svg>
+            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-3 bg-gray-200 rounded-full blur-sm transform-gpu animate-shadow"></div>
+        </div>
+        
+        <h1 class="text-7xl font-bold text-gray-900 mb-4">404</h1>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-2">Page Not Found</h2>
+        <p class="text-gray-600 mb-8 max-w-md mx-auto">
+            Oops! It seems like you've ventured into uncharted territory. The page you're looking for has gone ghost hunting.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="javascript:history.back()" 
+               class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-base font-medium text-blue-700 bg-blue-100 hover:bg-blue-200 transition-colors duration-300">
+                <!-- Arrow Left Icon -->
+                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 19-7-7 7-7"></path>
+                    <path d="M19 12H5"></path>
+                </svg>
+                Go Back
+            </a>
+        </div>
+    </div>
+</body>
+</html>
