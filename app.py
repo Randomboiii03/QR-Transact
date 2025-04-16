@@ -16,7 +16,7 @@ def index():
     links = set_links(qrcode)
     return render_template('index.html', image_url=links['preview_url'], download_url=links['download_url'], origin_url=origin_url)
 
-@app.route('/submit', methods=['POST'])
+@app.route('/result', methods=['POST'])
 def submit():
     name = request.form['name']
     email = request.form['email']
