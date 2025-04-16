@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from functions import set_links, send_receipt_email
 from werkzeug.utils import secure_filename
 import io
+
 
 app = Flask(__name__)
 
@@ -15,6 +16,7 @@ def index():
 
     links = set_links(qrcode)
     return render_template('index.html', image_url=links['preview_url'], download_url=links['download_url'], origin_url=origin_url)
+
 
 @app.route('/result', methods=['POST'])
 def submit():
@@ -47,6 +49,7 @@ def submit():
         return render_template('success.html', email=email, origin_url=origin_url)
     else:
         return render_template('404.html'), 404
+    
 
 @app.errorhandler(Exception)
 def handle_exception(e):
